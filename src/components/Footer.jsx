@@ -1,0 +1,116 @@
+import { Link } from 'react-router-dom';
+import { Mail, Phone, MapPin, Send, Rss, Globe, AtSign } from 'lucide-react';
+
+export default function Footer() {
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="bg-dark-2 border-t border-white/5">
+      {/* CTA Band */}
+      <div className="bg-mesh border-b border-white/5">
+        <div className="max-w-6xl mx-auto px-6 py-20 text-center">
+          <p className="section-label mb-4">Ready to start?</p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            Don't just build a product.<br />
+            <span className="text-gradient">Build a digital advantage.</span>
+          </h2>
+          <p className="text-white/50 max-w-md mx-auto mb-8 text-lg">
+            Tell us what you need — we'll respond within 24 hours with a clear plan and honest pricing.
+          </p>
+          <Link to="/contact" className="btn-primary px-8 py-4 text-base">Book a Free Consultation</Link>
+        </div>
+      </div>
+
+      {/* Footer Grid */}
+      <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        {/* Brand */}
+        <div>
+          <Link to="/" className="flex items-center mb-5">
+            <img
+              src="/logo-full.png"
+              alt="Clikconsult"
+              className="h-12 w-auto object-contain"
+            />
+          </Link>
+          <p className="text-white/40 text-sm leading-relaxed mb-6">
+            Full-service IT and digital marketing firm helping businesses build, grow, and automate online.
+          </p>
+          <div className="flex gap-3">
+            {[{ Icon: Send, label: 'X / Twitter' }, { Icon: Rss, label: 'LinkedIn' }, { Icon: AtSign, label: 'Instagram' }, { Icon: Globe, label: 'GitHub' }].map(({ Icon }, i) => (
+              <a key={i} href="#" className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-primary hover:border-primary transition-all">
+                <Icon size={15} />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Services */}
+        <div>
+          <p className="text-white text-sm font-semibold mb-5">Services</p>
+          <ul className="space-y-3">
+            {[
+              ['Web Development', '/services/web-development'],
+              ['Mobile App Dev', '/services/mobile-apps'],
+              ['Desktop Apps', '/services/desktop-apps'],
+              ['Web Automations', '/services/web-automations'],
+              ['Digital Marketing', '/services/digital-marketing'],
+            ].map(([label, path]) => (
+              <li key={path}><Link to={path} className="text-white/40 hover:text-primary text-sm transition-colors">{label}</Link></li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Company */}
+        <div>
+          <p className="text-white text-sm font-semibold mb-5">Company</p>
+          <ul className="space-y-3">
+            {[
+              ['About Us', '/about'],
+              ['Portfolio', '/portfolio'],
+              ['Insights', '/blog'],
+              ['Careers', '/careers'],
+              ['Contact', '/contact'],
+            ].map(([label, path]) => (
+              <li key={path}><Link to={path} className="text-white/40 hover:text-primary text-sm transition-colors">{label}</Link></li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div>
+          <p className="text-white text-sm font-semibold mb-5">Get in Touch</p>
+          <ul className="space-y-4">
+            <li className="flex gap-3 items-start">
+              <Mail size={15} className="text-primary mt-0.5 shrink-0" />
+              <a href="mailto:udoettea@gmail.com" className="text-white/40 hover:text-white text-sm transition-colors">hello@clikconsult.com</a>
+            </li>
+            <li className="flex gap-3 items-start">
+              <Phone size={15} className="text-primary mt-0.5 shrink-0" />
+              <a href="tel:+2349038544515" className="text-white/40 hover:text-white text-sm transition-colors">+234 903 854 4515</a>
+            </li>
+            <li className="flex gap-3 items-start">
+              <MapPin size={15} className="text-primary mt-0.5 shrink-0" />
+              <span className="text-white/40 text-sm">Uyo, Nigeria</span>
+            </li>
+          </ul>
+          <div className="mt-6">
+            <p className="text-white/40 text-xs mb-3">Newsletter</p>
+            <div className="flex gap-2">
+              <input type="email" placeholder="Your email" className="flex-1 bg-white/5 border border-white/10 rounded-full px-4 py-2 text-sm text-white placeholder-white/20 focus:outline-none focus:border-primary/50" />
+              <button className="bg-primary text-dark rounded-full px-4 py-2 text-xs font-semibold hover:bg-primary-dark transition-colors">Go</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="border-t border-white/5 max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p className="text-white/20 text-xs">© {year} Clikconsult. All rights reserved.</p>
+        <div className="flex gap-6">
+          <Link to="/privacy" className="text-white/20 hover:text-white/50 text-xs transition-colors">Privacy Policy</Link>
+          <Link to="/terms" className="text-white/20 hover:text-white/50 text-xs transition-colors">Terms of Use</Link>
+        </div>
+      </div>
+    </footer>
+  );
+}
