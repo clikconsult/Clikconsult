@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin, Clock, Briefcase } from 'lucide-react';
 import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 
 const openings = [
   {
@@ -45,6 +46,11 @@ const perks = [
 export default function Careers() {
   return (
     <main className="pt-32">
+      <SEO
+        title="Careers"
+        description="Explore career opportunities at Clikconsult and join a Nigerian digital agency building websites, apps, automations, and marketing campaigns."
+        path="/careers"
+      />
       {/* Hero */}
       <section className="max-w-4xl mx-auto px-6 pb-20 text-center">
         <Reveal>

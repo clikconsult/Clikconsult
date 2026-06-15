@@ -2,6 +2,11 @@ import { Smartphone, Wifi, Star, Zap, Shield, RefreshCw } from 'lucide-react';
 import ServicePage from '../../components/ServicePage';
 
 const data = {
+  seo: {
+    title: 'Mobile App Development in Nigeria',
+    description: 'Clikconsult designs and develops iOS, Android, React Native, and Flutter mobile apps for businesses in Nigeria and beyond.',
+    path: '/services/mobile-apps',
+  },
   hero: {
     label: 'Mobile App Development',
     heading: 'iOS and Android apps users actually come back to.',

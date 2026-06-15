@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp, BarChart2, PieChart } from 'lucide-react';
 import Reveal from '../../components/Reveal';
+import SEO from '../../components/SEO';
 import { marketingChannels } from '../../data/marketingChannels';
 
 const results = [
@@ -13,6 +14,11 @@ const results = [
 export default function DigitalMarketing() {
   return (
     <main className="pt-32">
+      <SEO
+        title="Digital Marketing Agency in Nigeria"
+        description="Clikconsult provides SEO, PPC, social media, content marketing, email marketing, CRO, analytics, and full-funnel digital marketing services in Nigeria."
+        path="/services/digital-marketing"
+      />
       {/* Hero */}
       <section className="max-w-5xl mx-auto px-6 pb-24">
         <Reveal>

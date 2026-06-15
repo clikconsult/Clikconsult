@@ -1,8 +1,14 @@
 import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 
 export function Privacy() {
   return (
     <main className="pt-32 pb-28 max-w-3xl mx-auto px-6">
+      <SEO
+        title="Privacy Policy"
+        description="Read the Clikconsult privacy policy for details on how we collect, use, and protect personal information."
+        path="/privacy"
+      />
       <Reveal>
         <p className="section-label mb-4">Legal</p>
         <h1 className="section-heading mb-10">Privacy Policy</h1>
@@ -28,6 +34,11 @@ export function Privacy() {
 export function Terms() {
   return (
     <main className="pt-32 pb-28 max-w-3xl mx-auto px-6">
+      <SEO
+        title="Terms of Use"
+        description="Read the Clikconsult terms of use for our website, digital agency services, payments, ownership, and liability terms."
+        path="/terms"
+      />
       <Reveal>
         <p className="section-label mb-4">Legal</p>
         <h1 className="section-heading mb-10">Terms of Use</h1>

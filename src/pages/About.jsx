@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Target, Eye, Heart } from 'lucide-react';
 import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 
 const team = [
   { name: 'Akan Udoette', role: 'Founder & CEO', bio: 'Full-stack developer and strategist with 6+ years building digital products for businesses across Africa and beyond.' },
@@ -18,6 +19,11 @@ const values = [
 export default function About() {
   return (
     <main className="pt-32">
+      <SEO
+        title="About Clikconsult"
+        description="Learn about Clikconsult, a Nigerian digital agency helping businesses grow through web design, apps, automation, digital marketing, and IT consulting."
+        path="/about"
+      />
       {/* Hero */}
       <section className="max-w-5xl mx-auto px-6 pb-24 text-center">
         <Reveal>

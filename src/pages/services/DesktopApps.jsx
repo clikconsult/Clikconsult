@@ -2,6 +2,11 @@ import { Monitor, HardDrive, Lock, Cpu, RefreshCw, LayoutDashboard } from 'lucid
 import ServicePage from '../../components/ServicePage';
 
 const data = {
+  seo: {
+    title: 'Desktop Application Development',
+    description: 'Clikconsult builds custom desktop software for Windows, Mac, and Linux, including POS systems, dashboards, and offline business tools.',
+    path: '/services/desktop-apps',
+  },
   hero: {
     label: 'Desktop Application Development',
     heading: 'Powerful desktop software for Windows, Mac, and Linux.',

@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, ArrowLeft, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Reveal from '../../../components/Reveal';
+import SEO from '../../../components/SEO';
 import { marketingChannels } from '../../../data/marketingChannels';
 
 export default function MarketingChannel() {
@@ -15,6 +16,12 @@ export default function MarketingChannel() {
   if (!service) {
     return (
       <main className="min-h-screen flex items-center justify-center px-6 pt-32">
+        <SEO
+          title="Marketing Service Not Found"
+          description="The Clikconsult marketing service page you are looking for could not be found."
+          path={`/services/digital-marketing/${channel}`}
+          noindex
+        />
         <div className="text-center">
           <p className="font-display text-6xl font-bold text-gradient opacity-30 mb-4">404</p>
           <h1 className="font-display text-2xl font-bold text-white mb-4">Service not found</h1>
@@ -29,6 +36,11 @@ export default function MarketingChannel() {
 
   return (
     <main className="pt-32">
+      <SEO
+        title={`${service.title} Services in Nigeria`}
+        description={`${service.desc} ${service.tagline}`}
+        path={`/services/digital-marketing/${service.slug}`}
+      />
       {/* Back */}
       <div className="max-w-5xl mx-auto px-6 mb-8">
         <Link

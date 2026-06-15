@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 
 const services = [
   'Web Development',
@@ -31,6 +32,11 @@ export default function Contact() {
 
   return (
     <main className="pt-32">
+      <SEO
+        title="Contact Clikconsult"
+        description="Contact Clikconsult for web design, digital marketing, automation, mobile app development, and IT consulting services in Nigeria."
+        path="/contact"
+      />
       {/* Hero */}
       <section className="max-w-4xl mx-auto px-6 pb-16 text-center">
         <Reveal>

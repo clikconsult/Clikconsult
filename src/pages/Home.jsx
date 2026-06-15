@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Globe, Smartphone, Monitor, Zap, TrendingUp, Star, Users, Award, Clock } from 'lucide-react';
 import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 import { posts, categoryColors } from '../data/blogPosts';
 
 const services = [
@@ -114,6 +115,11 @@ function AnimatedCounter({
 export default function Home() {
   return (
     <main>
+      <SEO
+        title="Clikconsult | Nigerian Web Design, Digital Marketing & IT Consulting Agency"
+        description="Clikconsult helps Nigerian businesses build websites, apps, automations, and digital marketing systems that turn visitors into clients."
+        path="/"
+      />
       {/* Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-dark">
         <div className="absolute inset-0 bg-mesh" />

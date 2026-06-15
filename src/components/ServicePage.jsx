@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import Reveal from '../components/Reveal';
+import SEO from './SEO';
 
-export default function ServicePage({ hero, overview, features, process, faqs, related }) {
+export default function ServicePage({ hero, overview, features, process, faqs, related, seo }) {
   return (
     <main className="pt-32">
+      <SEO
+        title={seo?.title || hero.label}
+        description={seo?.description || hero.subheading}
+        path={seo?.path || '/'}
+      />
       {/* Hero */}
       <section className="max-w-5xl mx-auto px-6 pb-24">
         <Reveal>

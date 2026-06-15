@@ -1,7 +1,47 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import sitemap from 'vite-plugin-sitemap'
+
+const routes = [
+  '/about',
+  '/portfolio',
+  '/blog',
+  '/blog/why-your-website-speed-is-costing-you-money',
+  '/blog/react-native-vs-flutter-2025',
+  '/blog/automating-your-sales-pipeline',
+  '/blog/seo-for-nigerian-businesses-2025',
+  '/blog/google-ads-nigeria-beginners-guide',
+  '/blog/when-to-build-a-mobile-app',
+  '/contact',
+  '/careers',
+  '/privacy',
+  '/terms',
+  '/services/web-development',
+  '/services/mobile-apps',
+  '/services/desktop-apps',
+  '/services/web-automations',
+  '/services/digital-marketing',
+  '/services/digital-marketing/seo',
+  '/services/digital-marketing/ppc',
+  '/services/digital-marketing/social-media',
+  '/services/digital-marketing/content-marketing',
+  '/services/digital-marketing/email-marketing',
+  '/services/digital-marketing/influencer-marketing',
+  '/services/digital-marketing/affiliate-marketing',
+  '/services/digital-marketing/cro',
+  '/services/digital-marketing/orm',
+  '/services/digital-marketing/ecommerce-marketing',
+  '/services/digital-marketing/video-marketing',
+  '/services/digital-marketing/analytics',
+]
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    sitemap({
+      hostname: 'https://clikconsult.com.ng',
+      dynamicRoutes: routes,
+    }),
+  ],
 })

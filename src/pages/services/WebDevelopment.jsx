@@ -2,6 +2,11 @@ import { Layers, Gauge, ShieldCheck, RefreshCw, Code2, Search } from 'lucide-rea
 import ServicePage from '../../components/ServicePage';
 
 const data = {
+  seo: {
+    title: 'Web Design and Web Development in Nigeria',
+    description: 'Clikconsult builds fast, SEO-ready websites, e-commerce stores, landing pages, and custom web apps for Nigerian businesses.',
+    path: '/services/web-development',
+  },
   hero: {
     label: 'Web Development',
     heading: 'Websites and web apps built to perform — not just to exist.',

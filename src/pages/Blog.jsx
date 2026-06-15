@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Clock } from 'lucide-react';
 import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 import { posts, categoryColors } from '../data/blogPosts';
 
 export default function Blog() {
@@ -9,6 +10,11 @@ export default function Blog() {
 
   return (
     <main className="pt-32">
+      <SEO
+        title="Digital Growth Insights"
+        description="Read practical Clikconsult guides on web development, SEO, digital marketing, automation, mobile apps, and online growth for Nigerian businesses."
+        path="/blog"
+      />
       {/* Hero */}
       <section className="max-w-5xl mx-auto px-6 pb-16 text-center">
         <Reveal>

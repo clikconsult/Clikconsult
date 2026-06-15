@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const categories = ['All', 'Web Dev', 'Mobile App', 'Automation', 'Marketing'];
@@ -88,6 +89,11 @@ export default function Portfolio() {
 
   return (
     <main className="pt-32">
+      <SEO
+        title="Portfolio"
+        description="Explore Clikconsult projects across web development, mobile apps, automation, and digital marketing for growing businesses."
+        path="/portfolio"
+      />
       {/* Hero */}
       <section className="max-w-5xl mx-auto px-6 pb-16 text-center">
         <Reveal>

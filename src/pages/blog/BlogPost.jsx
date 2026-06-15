@@ -2,6 +2,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Clock, Calendar, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Reveal from '../../components/Reveal';
+import SEO from '../../components/SEO';
 import { posts, categoryColors } from '../../data/blogPosts';
 
 function ContentBlock({ block }) {
@@ -55,6 +56,12 @@ export default function BlogPost() {
   if (!post) {
     return (
       <main className="min-h-screen flex items-center justify-center px-6 pt-32">
+        <SEO
+          title="Article Not Found"
+          description="The Clikconsult article you are looking for could not be found."
+          path={`/blog/${slug}`}
+          noindex
+        />
         <div className="text-center">
           <p className="font-display text-6xl font-bold text-gradient opacity-30 mb-4">404</p>
           <h1 className="font-display text-2xl font-bold text-white mb-4">Article not found</h1>
@@ -67,6 +74,12 @@ export default function BlogPost() {
 
   return (
     <main className="pt-32">
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        path={`/blog/${post.slug}`}
+        type="article"
+      />
       {/* Back button */}
       <div className="max-w-3xl mx-auto px-6 mb-8">
         <button

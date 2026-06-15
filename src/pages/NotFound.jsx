@@ -1,10 +1,17 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 
 export default function NotFound() {
   return (
     <main className="min-h-screen flex items-center justify-center px-6">
+      <SEO
+        title="Page Not Found"
+        description="The Clikconsult page you are looking for could not be found."
+        path="/404"
+        noindex
+      />
       <div className="text-center">
         <Reveal>
           <p className="font-display text-9xl font-bold text-gradient opacity-30 mb-4">404</p>

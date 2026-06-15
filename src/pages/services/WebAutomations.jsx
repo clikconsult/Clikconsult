@@ -2,6 +2,11 @@ import { Zap, Clock, GitBranch, Database, BarChart3, RefreshCw } from 'lucide-re
 import ServicePage from '../../components/ServicePage';
 
 const data = {
+  seo: {
+    title: 'Business Automation and Web Automation Services',
+    description: 'Clikconsult automates workflows, reporting, CRM pipelines, web scraping, and API integrations for growing Nigerian businesses.',
+    path: '/services/web-automations',
+  },
   hero: {
     label: 'Web Automations',
     heading: 'Stop doing the same thing twice. Automate it.',
