@@ -43,10 +43,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdown, setDropdown] = useState(null);
-  const [mobileSubmenus, setMobileSubmenus] = useState({
-    development: false,
-    marketing: false,
-  });
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -58,16 +55,10 @@ export default function Navbar() {
   useEffect(() => {
     setOpen(false);
     setDropdown(null);
-    setMobileSubmenus({ development: false, marketing: false });
+    setMobileServicesOpen(false);
   }, [location]);
 
   const isActive = (path) => location.pathname === path;
-  const toggleMobileSubmenu = (key) => {
-    setMobileSubmenus((current) => ({
-      ...current,
-      [key]: !current[key],
-    }));
-  };
 
   return (
     <header className={`fixed top-4 left-0 right-0 z-50 flex justify-center px-4 transition-all duration-500`}>
@@ -165,20 +156,22 @@ export default function Navbar() {
               exit={{ height: 0, opacity: 0 }}
               className="overflow-hidden border-t border-white/5"
             >
-              <div className="px-6 py-4 flex flex-col gap-1">
+              <div className="max-h-[calc(100vh-7.5rem)] overflow-y-auto px-6 py-4 flex flex-col gap-1">
                 <Link to="/" className="py-3 text-sm text-white/80 border-b border-white/5">Home</Link>
                 <Link to="/about" className="py-3 text-sm text-white/80 border-b border-white/5">About</Link>
                 <button
                   type="button"
-                  onClick={() => toggleMobileSubmenu('development')}
-                  className="flex items-center justify-between py-3 text-left text-xs text-muted uppercase tracking-widest border-b border-white/5"
-                  aria-expanded={mobileSubmenus.development}
+                  onClick={() => setMobileServicesOpen((current) => !current)}
+                  className={`flex items-center justify-between py-3 text-left text-sm border-b border-white/5 transition-colors ${
+                    location.pathname.startsWith('/services') ? 'text-primary' : 'text-white/80'
+                  }`}
+                  aria-expanded={mobileServicesOpen}
                 >
-                  Development
-                  <ChevronDown size={15} className={`transition-transform ${mobileSubmenus.development ? 'rotate-180' : ''}`} />
+                  Services
+                  <ChevronDown size={15} className={`transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
                 </button>
                 <AnimatePresence initial={false}>
-                  {mobileSubmenus.development && (
+                  {mobileServicesOpen && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
@@ -186,36 +179,15 @@ export default function Navbar() {
                       transition={{ duration: 0.2 }}
                       className="overflow-hidden"
                     >
-                      <div className="flex flex-col gap-1 py-2">
+                      <div className="flex flex-col gap-1 py-3 border-b border-white/5">
+                        <p className="py-2 text-xs text-muted uppercase tracking-widest">Development</p>
                         {devServices.map(s => (
                           <Link key={s.path} to={s.path} className="flex items-center gap-2 py-2 pl-3 text-sm text-white/70 hover:text-primary">
                             <s.icon size={14} />
                             {s.label}
                           </Link>
                         ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-                <button
-                  type="button"
-                  onClick={() => toggleMobileSubmenu('marketing')}
-                  className="flex items-center justify-between py-3 text-left text-xs text-muted uppercase tracking-widest border-b border-white/5"
-                  aria-expanded={mobileSubmenus.marketing}
-                >
-                  Marketing
-                  <ChevronDown size={15} className={`transition-transform ${mobileSubmenus.marketing ? 'rotate-180' : ''}`} />
-                </button>
-                <AnimatePresence initial={false}>
-                  {mobileSubmenus.marketing && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="flex flex-col gap-1 py-2">
+                        <p className="py-2 text-xs text-muted uppercase tracking-widest">Marketing</p>
                         {mktServices.map(s => (
                           <Link key={s.path} to={s.path} className="flex items-center gap-2 py-2 pl-3 text-sm text-white/70 hover:text-primary">
                             <s.icon size={14} />
